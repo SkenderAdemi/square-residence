@@ -96,7 +96,9 @@
             </div>
             <div class="button-holder">
               <div class="button-wrapper">
-                <a href="#" class="button w-button">Check Rooms Now</a>
+                <a href="#accommodations" class="button w-button"
+                  >Check Rooms Now</a
+                >
               </div>
             </div>
           </div>
@@ -504,58 +506,51 @@
                   <div class="contact-form-holder">
                     <div class="contact-form-block w-form">
                       <form
-                        id="wf-form-Email"
-                        name="wf-form-Email"
-                        data-name="Email"
-                        method="get"
+                        id="email-form"
+                        name="email-form"
                         class="contact-us-form"
-                        data-wf-page-id="6852bf91d02682b2baa5c19a"
-                        data-wf-element-id="c103a75f-da44-9b03-465d-a933257ac2bd"
+                        method="POST"
+                        action="https://formsubmit.co/emirlatifi65@gmail.com"
                       >
                         <div class="form-field-holder">
                           <input
                             class="text-field w-input"
-                            maxlength="256"
                             name="Name"
-                            data-name="Name"
                             placeholder="Your name"
                             type="text"
-                            id="Name"
-                            required=""
-                          /><input
+                            required
+                          />
+                          <input
                             class="text-field w-input"
-                            maxlength="256"
                             name="Email"
-                            data-name="Email"
                             placeholder="Your email"
                             type="email"
-                            id="Email"
-                            required=""
+                            required
                           />
                         </div>
                         <textarea
-                          id="field"
-                          name="field"
-                          maxlength="5000"
-                          data-name="Field"
+                          name="Message"
                           placeholder="Example Text"
                           class="textarea w-input"
-                        ></textarea
-                        ><input
+                          required
+                        ></textarea>
+
+                        <input type="hidden" name="_captcha" value="false" />
+                        <input type="hidden" name="_template" value="box" />
+
+                        <input
                           type="submit"
-                          data-wait="Please wait..."
-                          class="submit-button w-button"
                           value="Submit"
+                          class="submit-button w-button"
                         />
                       </form>
-                      <div class="w-form-done">
-                        <div>Thank you! Your submission has been received!</div>
-                      </div>
-                      <div class="w-form-fail">
-                        <div>
-                          Oops! Something went wrong while submitting the form.
-                        </div>
-                      </div>
+
+                      <p
+                        id="success-message"
+                        style="display: none; color: green; margin-top: 20px"
+                      >
+                        Message sent successfully!
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -601,7 +596,9 @@
                         class="path-ijid1"
                       ></path></svg
                   ></a>
-                  <a href="#" class="w-inline-block"
+                  <a
+                    href="https://www.instagram.com/square.residence"
+                    class="w-inline-block"
                     ><svg
                       viewbox="0 0 24 24"
                       width="64"
@@ -651,6 +648,41 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+    <script>
+      document
+        .getElementById("email-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const form = e.target;
+          const formData = new FormData(form);
+
+          fetch("https://formsubmit.co/emirlatifi65@gmail.com", {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json",
+            },
+          })
+            .then((response) => {
+              if (response.ok) {
+                form.reset();
+                const message = document.getElementById("success-message");
+                message.style.display = "block";
+                setTimeout(() => {
+                  message.style.display = "none";
+                }, 3000);
+              } else {
+                alert("Something went wrong. Please try again.");
+              }
+            })
+            .catch((error) => {
+              console.error(error);
+              alert("Submission failed.");
+            });
+        });
+    </script>
+
     <script src="js/webflow.js" type="text/javascript"></script>
   </body>
 </html>
