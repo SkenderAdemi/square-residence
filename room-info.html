@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Sat Jun 21 2025 13:32:20 GMT+0000 (Coordinated Universal Time)  -->
+<!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Jun 24 2025 10:25:39 GMT+0000 (Coordinated Universal Time)  -->
 <html
   data-wf-page="68552f8e1e8e0d98da01b959"
   data-wf-site="6852bf91d02682b2baa5c183"
@@ -45,6 +45,7 @@
     </script>
     <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="images/webclip.png" rel="apple-touch-icon" />
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const rooms = {
@@ -96,7 +97,6 @@
             bedrooms: "1 Bedroom",
             bathrooms: "1 Bathroom",
             kitchen: false,
-            price: "150$",
           },
 
           // Example second room
@@ -122,7 +122,7 @@
             },
             img3: {
               src: "images/Square-residence-img-15.jpg",
-              lightboxUrl: "images/Square-residence-img-22.jpg",
+              lightboxUrl: "images/Square-residence-img-15.jpg",
               width: 1440,
               height: 1080,
               fileSize: 243000,
@@ -149,7 +149,6 @@
             bedrooms: "2",
             bathrooms: "1",
             kitchen: true,
-            price: "250$",
           },
           triple: {
             roomtitle: "Triple room",
@@ -200,7 +199,6 @@
             bedrooms: "1",
             bathrooms: "1",
             kitchen: false,
-            price: "200$",
           },
         };
 
@@ -250,7 +248,6 @@
         document.getElementById("guests").innerText = room.guests;
         document.getElementById("bedrooms").innerText = room.bedrooms;
         document.getElementById("bathrooms").innerText = room.bathrooms;
-        document.getElementById("price").innerText = room.price;
 
         const kitchenBlock = document.getElementById("kitchen-feature");
         kitchenBlock.style.display = room.kitchen ? "flex" : "none";
@@ -288,9 +285,30 @@
   <body>
     <section class="section rooms-details-section">
       <div class="hero-section-rooms">
+        <a href="index.html" class="back-icon-hold w-inline-block"
+          ><svg
+            width="64"
+            height="64"
+            viewbox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            app="ikonik"
+            class="back-icon"
+          >
+            <path
+              d="M11.0303 8.53033C11.3232 8.23744 11.3232 7.76256 11.0303 7.46967C10.7374 7.17678 10.2626 7.17678 9.96967 7.46967L5.96967 11.4697C5.82322 11.6161 5.75 11.8081 5.75 12C5.75 12.1017 5.77024 12.1987 5.80691 12.2871C5.84351 12.3755 5.89776 12.4584 5.96967 12.5303L9.96967 16.5303C10.2626 16.8232 10.7374 16.8232 11.0303 16.5303C11.3232 16.2374 11.3232 15.7626 11.0303 15.4697L8.31066 12.75H18C18.4142 12.75 18.75 12.4142 18.75 12C18.75 11.5858 18.4142 11.25 18 11.25H8.31066L11.0303 8.53033Z"
+              fill="currentColor"
+              app="ikonik"
+              class="path-de0r9"
+            ></path></svg
+        ></a>
         <div class="container-room">
           <div class="room-section">
-            <div class="center-text-holder">
+            <div
+              data-w-id="a89a34a1-b875-1e4c-4db7-7439d94883c7"
+              style="opacity: 0"
+              class="center-text-holder"
+            >
               <div class="animate-on-load-01">
                 <h1 id="roomtitle" class="room-detail-title">Standard Room</h1>
               </div>
@@ -300,10 +318,24 @@
                 </div>
               </div>
             </div>
-            <div class="animate-on-load-03">
+            <div
+              data-w-id="a89a34a1-b875-1e4c-4db7-7439d94883ce"
+              style="
+                -webkit-transform: translate3d(0, 30px, 0) scale3d(1, 1, 1)
+                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -moz-transform: translate3d(0, 30px, 0) scale3d(1, 1, 1)
+                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -ms-transform: translate3d(0, 30px, 0) scale3d(1, 1, 1)
+                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                transform: translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0)
+                  rotateY(0) rotateZ(0) skew(0, 0);
+                opacity: 0;
+              "
+              class="animate-on-load-03"
+            >
               <div class="room-detail-holder">
-                <div class="room-detail-image-holder"></div>
                 <img
+                  sizes="(max-width: 1440px) 100vw, 1440px"
                   src=""
                   loading="lazy"
                   id="mainimg"
@@ -317,6 +349,7 @@
                           href="#"
                           class="lightbox-link w-inline-block w-lightbox"
                           ><img
+                            sizes="(max-width: 1440px) 100vw, 1440px"
                             src=""
                             loading="lazy"
                             id="img1"
@@ -333,6 +366,7 @@
                           href="#"
                           class="lightbox-link w-inline-block w-lightbox"
                           ><img
+                            sizes="(max-width: 1440px) 100vw, 1440px"
                             src=""
                             loading="lazy"
                             id="img2"
@@ -349,6 +383,7 @@
                           href="#"
                           class="lightbox-link w-inline-block w-lightbox"
                           ><img
+                            sizes="(max-width: 1440px) 100vw, 1440px"
                             src=""
                             loading="lazy"
                             id="img3"
@@ -365,6 +400,7 @@
                           href="#"
                           class="lightbox-link w-inline-block w-lightbox"
                           ><img
+                            sizes="(max-width: 1440px) 100vw, 1440px"
                             src=""
                             loading="lazy"
                             id="img4"
@@ -377,22 +413,6 @@
                             }
                           </script>
                         </a>
-                        <!-- <a
-                          href="#"
-                          class="lightbox-link w-inline-block w-lightbox"
-                          ><img
-                            src=""
-                            loading="lazy"
-                            id="img5"
-                            class="lightbox-link-image"
-                          />
-                          <script type="application/json" class="w-json">
-                            {
-                              "items": [],
-                              "group": "Image"
-                            }
-                          </script>
-                        </a> -->
                       </div>
                     </div>
                   </div>
@@ -400,7 +420,21 @@
               </div>
             </div>
           </div>
-          <div class="room-detail-checkout">
+          <div
+            data-w-id="a89a34a1-b875-1e4c-4db7-7439d94883e0"
+            style="
+              -webkit-transform: translate3d(0, 20px, 0) scale3d(1, 1, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -moz-transform: translate3d(0, 20px, 0) scale3d(1, 1, 1)
+                rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -ms-transform: translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0)
+                rotateY(0) rotateZ(0) skew(0, 0);
+              transform: translate3d(0, 20px, 0) scale3d(1, 1, 1) rotateX(0)
+                rotateY(0) rotateZ(0) skew(0, 0);
+              opacity: 0;
+            "
+            class="room-detail-checkout"
+          >
             <div class="room-details">
               <div class="room-heading">
                 <div class="fade-in-on-scroll">
@@ -551,10 +585,6 @@
                   </div>
                 </div>
                 <div class="devider"></div>
-                <div class="per-night-holder">
-                  <div id="price" class="property-price">150$</div>
-                  <div class="room-feature-text-checkout">Per night</div>
-                </div>
                 <a href="index.html#contact-us" class="button w-button"
                   >Contact us</a
                 >
@@ -565,7 +595,7 @@
       </div>
       <div class="half-blue"></div>
     </section>
-    <section id="contact-us" class="section section-booking">
+    <section class="section section-booking">
       <div class="navbar-line"></div>
       <div class="hero-section-auto">
         <div class="container-facilities">
@@ -601,7 +631,9 @@
                         class="path-ijid1"
                       ></path></svg
                   ></a>
-                  <a href="#" class="w-inline-block"
+                  <a
+                    href="https://www.instagram.com/square.residence"
+                    class="w-inline-block"
                     ><svg
                       viewbox="0 0 24 24"
                       width="64"
